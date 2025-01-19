@@ -1,0 +1,42 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form > * {
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.md-button.left {
+  border-radius: 10px 0 0 10px;
+}
+.md-button.middle {
+  border-radius: 0;
+  border-left: 1px solid rgba(230, 230, 230, 0.96);
+  border-right: 1px solid rgba(230, 230, 230, 0.96);
+}
+.md-button.right {
+  border-radius: 0 10px 10px 0;
+}
+.md-button:not([disabled]):hover {
+  background-color: rgba(193, 193, 193, 0.96);
+  color: rgba(44, 65, 164, 0.96);
+  transition: 0.3s;
+}

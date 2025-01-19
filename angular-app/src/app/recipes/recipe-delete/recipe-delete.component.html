@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="header">
+    <h1>Recept verwijderen</h1>
+  </div>
+  <div class="form" *ngIf="recipe$ | async as recipe">
+    <div>
+      Bent u zeker dat u dit recept wenst te verwijderen?
+    </div>
+    <div>
+      <b>Recept naam</b><br />
+      {{ recipe.title }}
+    </div>
+    <div>
+      <b>Omschrijving</b><br />
+      {{ recipe.description }}
+    </div>
+    <div>
+      <b>Instructies</b><br />
+      {{ recipe.instructions }}
+    </div>
+    <div>
+      <b>Voorbereidingstijd</b><br />
+      {{ recipe.prep_time }} minuten</div>
+    <div>
+      <b>Kooktijd</b><br />
+      {{ recipe.cook_time }} minuten
+    </div>
+    <div>
+      <button class="md-button left" mat-raised-button (click)="onConfirm()">Recept verwijderen</button>
+      <button class="md-button right" mat-raised-button (click)="onCancel()">Annuleren</button>
+    </div>
+  </div>
+</div>

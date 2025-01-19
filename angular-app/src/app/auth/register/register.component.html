@@ -1,0 +1,18 @@
+<form (ngSubmit)="onRegister()" class="container">
+  <mat-form-field>
+    <mat-label>Gebruikersnaam</mat-label>
+    <input matInput [(ngModel)]="user.username" name="username" required />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="user.email" name="email" type="email" required />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Wachtwoord</mat-label>
+    <input matInput [(ngModel)]="user.password" name="password" type="password" required />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Registreren</button>
+</form>

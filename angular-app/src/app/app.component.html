@@ -1,0 +1,33 @@
+<mat-toolbar color="primary" class="app-header">
+  <!-- Logo -->
+  <div class="logo-container">
+    <mat-icon class="logo">local_dining</mat-icon>
+    <span class="app-title">Koboa</span>
+  </div>
+
+  <!-- Navigatiebalk -->
+  <div class="nav-container">
+    <button mat-button routerLink="/" routerLinkActive="active">Home</button>
+    <button mat-button routerLink="/recipes" routerLinkActive="active">Recepten</button>
+  </div>
+
+  <!-- Gebruikersectie -->
+  <div class="user-actions">
+    <ng-container *ngIf="(isLoggedIn$ | async); else loginButton">
+      <button mat-icon-button (click)="editProfile()">
+        <mat-icon>person</mat-icon>
+      </button>
+      <button mat-icon-button (click)="logout()">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </ng-container>
+
+    <ng-template #loginButton>
+      <button mat-icon-button (click)="login()">
+        <mat-icon>login</mat-icon>
+      </button>
+    </ng-template>
+  </div>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="header">
+    <h1>{{ isEditMode ? 'Recept aanpassen' : 'Recept toevoegen' }}</h1>
+  </div>
+
+  <form (ngSubmit)="onSubmit()" [formGroup]="recipeForm" class="form">
+    <mat-form-field>
+      <mat-label for="title">Recept naam</mat-label>
+      <input matInput  id="title" formControlName="title" type="text" required />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label for="description">Omschrijving</mat-label>
+      <textarea matInput id="description" formControlName="description" rows="3"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label for="instructions">Instructies</mat-label>
+      <textarea matInput id="instructions" formControlName="instructions" rows="5" required></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label for="prepTime">Voorbereidingstijd (minuten)</mat-label>
+      <input matInput  id="prepTime" formControlName="prep_time" type="number" required />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label for="cookTime">Kooktijd (minuten)</mat-label>
+      <input matInput  id="cookTime" formControlName="cook_time" type="number" required />
+    </mat-form-field>
+
+    <div>
+      <button class="md-button left" mat-raised-button type="submit" [disabled]="recipeForm.invalid">{{ isEditMode ? 'Recept opslaan' : 'Recept toevoegen' }}</button>
+      <button class="md-button right" mat-raised-button type="button" (click)="onCancel()">Annuleren</button>
+    </div>
+  </form>
+</div>

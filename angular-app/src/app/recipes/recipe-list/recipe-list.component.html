@@ -1,0 +1,19 @@
+<table mat-table [dataSource]="recipes" class="mat-elevation-z8">
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef>Recept</th>
+    <td mat-cell *matCellDef="let recipe">{{ recipe.title }}</td>
+  </ng-container>
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef>Omschrijving</th>
+    <td mat-cell *matCellDef="let recipe">{{ recipe.description }}</td>
+  </ng-container>
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Acties</th>
+    <td mat-cell *matCellDef="let recipe">
+      <a mat-button [routerLink]="['/recipes/edit', recipe.recipe_id]">Wijzigen</a>
+      <a mat-button [routerLink]="['/recipes/delete', recipe.recipe_id]">Verwijderen</a>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+</table>

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "angular-app",
+			"path": "./angular-app"
+		},
+		{
+			"name": "flask-app",
+			"path": "./flask-app"
+		}
+	],
+	"settings": {}
+}
